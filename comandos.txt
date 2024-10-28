@@ -1,0 +1,5 @@
+endtroll
+oword:a
+nword:miau
+info
+help
