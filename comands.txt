@@ -1,5 +1,5 @@
 endtroll
-oword:a
+oword:hi
 nword:miau
 info
 help

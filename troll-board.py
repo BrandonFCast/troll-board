@@ -1,6 +1,6 @@
 import pyperclip as cb
 
-text = "funcionando" # in this variable we're going to save the clipboard value
+text = "working" # in this variable we're going to save the clipboard value
 oldWord = "hi" # is the word we are going to replace
 newWord = "miau" # is the word that will replace the old word
 
