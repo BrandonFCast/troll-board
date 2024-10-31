@@ -1,11 +1,11 @@
 import pyperclip as cb
 
 text = "funcionando" # in this variable we're going to save the clipboard value
-oldWord = ";" # is the word we are going to replace
+oldWord = "hi" # is the word we are going to replace
 newWord = "miau" # is the word that will replace the old word
 
 # this is the help message that will be explained to the users
-helpMsg = "\'endtroll\' = termina el programa\n\'oword:x\' = cambia la palabra a remplazar por x y la palabra nueva es igual pero con nword\n\'info\' = muestra las palabras"
+helpMsg = "\'endtroll\' = program exit\n\'oword:x\' = Indicates the word that will be replaced, where 'x' is the word\n\'nword:x\' = indicates the replacement (x is the replacement) \n\'info\' = shows the word to be replaced and its replacement"
 
 def evaluateCommand (text) :
     sections = text.split(":")
@@ -29,8 +29,10 @@ def showInfo (value) :
     cb.copy("palabra a remplazar: " + oldWord + "\npalabra nueva: " + newWord)
 
 def showHelp (value) :
-    cb.copy("hola guapote, los comandos funcionan copiandolos\n" + helpMsg)
+    cb.copy(helpMsg)
 
+# to add new commands insert the key word and the command function,
+# it receives a parameter (the text after colon)
 commands = {
     "oword": setOldWord,
     "nword": setNewWord,
@@ -40,9 +42,9 @@ commands = {
 
 while (cb.paste() != "endtroll") :
     cb.waitForNewPaste()
-    text = cb.paste()
+    text = cb.paste() # the text in the clipboard
 
-    # if the clipboard text is not a command we're going to replace the words
+    # evaluate the clipboard text, if it's not a command we're going to replace the words
     if not evaluateCommand(text) :
         text = text.replace(oldWord, newWord)
         cb.copy(text)
