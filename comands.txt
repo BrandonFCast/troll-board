@@ -1,5 +1,11 @@
 endtroll
-oword:hi
-nword:miau
+    ends the program
+
+oword:x
+    sets the word to replace as x
+
+nword:x
+    sets the word to be replacement as x
+
 info
-help
+    shows the words (nword and oword)
